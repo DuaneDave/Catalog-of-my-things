@@ -1,22 +1,34 @@
-# frozen_string_literal: true
+require_relative 'app'
+
+def display_options
+  puts 'Choose an option:'
+
+  puts '1 List all book'
+  puts '5 List all labels'
+  puts '9 Add book'
+  puts '0 Exit'
+
+  gets.chomp.to_i
+end
 
 def main
+  app = App.new
   puts 'Welcome to Catalog of My Things App!'
 
-  def options(option)
+  loop do
+    option = display_options
+
     case option
     when 1
-      list_all_books
-    when 2
-      list_all_music_album
-    when 3
-      list_all_games
-    when 4
-      list_all_movies
+      app.list_all_books
     when 5
-      puts 'Thank you for using our app! Have a nice day'
+      app.list_all_labels
+    when 9
+      app.add_book
+    when 0
+      break
     else
-      puts 'Incorrect option, please try again'
+        puts 'Invalid option'
     end
   end
 end
