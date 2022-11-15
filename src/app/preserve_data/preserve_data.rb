@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require 'json'
 
 class PreserveData
@@ -20,6 +18,3 @@ class PreserveData
     JSON.parse(File.read(file_path))
   end
 end
-
-# preserve = PreserveData.new('./src/store/labels.json')
-# preserve.save([{title: 'test', color: 'red'}])
