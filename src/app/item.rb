@@ -23,6 +23,3 @@ class Item
     @label = label
   end
 end
-
-item = Item.new('2002/11/14')
-puts item.can_be_archived?
