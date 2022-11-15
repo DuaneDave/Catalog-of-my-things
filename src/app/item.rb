@@ -12,6 +12,7 @@ class Item
 
   def can_be_archived?
     (DateTime.now - publish_date).to_i >= 3650
+    # return true if @publish_date < Date.today - 3650
   end
 
   def move_to_archive
