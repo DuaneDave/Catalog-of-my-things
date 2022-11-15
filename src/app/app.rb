@@ -60,14 +60,14 @@ class App
     puts 'Enter publish date:'
     publish_date = gets.chomp
 
-    _book = Book.new(cover_state, publisher, publish_date)
-    add_label(_book)
-    @books << _book
+    book = Book.new(cover_state, publisher, publish_date)
+    add_label(book)
+    @books << book
 
     arr = @preserved_books.load
 
-    @books.each do |book|
-      arr << {cover_state: book.cover_state, publisher: book.publisher, publish_date: book.publish_date}
+    @books.each do |item|
+      arr << {cover_state: item.cover_state, publisher: item.publisher, publish_date: item.publish_date}
     end
 
     preserve_all('./src/store/books.json', arr)
