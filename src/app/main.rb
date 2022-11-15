@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'app'
 
 def display_options
@@ -28,7 +30,7 @@ def main
     when 0
       break
     else
-        puts 'Invalid option'
+      puts 'Invalid option'
     end
   end
 end

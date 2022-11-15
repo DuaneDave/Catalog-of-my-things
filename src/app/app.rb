@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'book'
 require_relative 'label'
 require_relative './preserve_data/preserve_data'
@@ -44,7 +46,7 @@ class App
     arr = @preserved_labels.load
 
     @labels.each do |tag|
-      arr << {title: tag.title, color: tag.color}
+      arr << { title: tag.title, color: tag.color }
     end
 
     preserve_all('./src/store/labels.json', arr)
@@ -67,7 +69,7 @@ class App
     arr = @preserved_books.load
 
     @books.each do |item|
-      arr << {cover_state: item.cover_state, publisher: item.publisher, publish_date: item.publish_date}
+      arr << { cover_state: item.cover_state, publisher: item.publisher, publish_date: item.publish_date }
     end
 
     preserve_all('./src/store/books.json', arr)

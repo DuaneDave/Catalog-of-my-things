@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 require 'json'
 
 class PreserveData
   attr_reader :file_path
 
-  def initialize (file_path)
+  def initialize(file_path)
     @file_path = file_path
   end
 
@@ -21,5 +23,3 @@ end
 
 # preserve = PreserveData.new('./src/store/labels.json')
 # preserve.save([{title: 'test', color: 'red'}])
-
-
