@@ -32,6 +32,6 @@ CREATE TABLE genres (
 CREATE TABLE music (
   id  INT,
   title VARCHAR(100),
-  on_spotify VARCHAR(100),
+  on_spotify BOOLEAN,
   FOREIGN KEY(id) REFERENCES item(id)
 );
