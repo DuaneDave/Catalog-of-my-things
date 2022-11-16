@@ -8,8 +8,8 @@ class App
   attr_reader :music_albums, :genres
 
   def initialize
-    @preserve_music_album = PreserveData.new('./src/store/music_album.json')
-    @preserved_genre = PreserveData.new('./src/store/genre.json')
+    @preserve_music_album = PreserveData.new('./src/store/music_albums.json')
+    @preserved_genre = PreserveData.new('./src/store/genres.json')
     @preserved_books = PreserveData.new('./src/store/books.json')
     @preserved_labels = PreserveData.new('./src/store/labels.json')
     @books = []
@@ -74,6 +74,47 @@ class App
     preserve_all('./src/store/labels.json', arr)
 
     puts 'Label added successfully'
+  end
+
+  def add_genre(item)
+    puts 'Enter genre name: '
+    name = gets.chomp
+
+    genre = Genre.new(name)
+    genre.add_genre(item)
+    @genres << genre
+
+    arr = @preserved_labels.load
+
+    @genres.each do |tag|
+      arr << { id:tag.id, name: tag.name }
+    end
+
+    preserve_all('./src/store/genres.json', arr)
+
+    puts 'Genre added successfully!'
+  end
+
+  def add_music_album
+    puts 'Is the music on spotify? (Y/N): '
+    spotify_value = gets.chomp.downcase == 'y'
+    puts 'Enter publish date (YYYY-MM-DD): '
+    publish_date = gets.chomp
+
+    music = Music.new(publish_date, spotify_value)
+    add_genre(music)
+    @music_albums << music
+
+    arr = @preserve_music_album.load
+
+    @music_albums.each do |item|
+      arr << { publish_date: item.publish_date, spotify_value: item.spotify_value }
+    end
+
+    preserve_all('./src/store/music_albums.json', arr)
+
+    puts 'Music album added successfully!'
+
   end
 
   def add_book
