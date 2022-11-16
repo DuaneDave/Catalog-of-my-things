@@ -1,6 +1,6 @@
 require 'rspec'
-require_relative('spec_helper')
-require_relative '../src/app/music'
+require_relative('./../../spec/spec_helper.rb')
+require_relative './../app/music'
 
 
 describe Music do

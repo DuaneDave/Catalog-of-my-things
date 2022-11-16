@@ -1,7 +1,7 @@
 require 'rspec'
-require_relative('spec_helper')
-require_relative '../src/app/genre'
-require_relative '../src/app/item'
+require_relative('./../../spec/spec_helper.rb')
+require_relative './../app/genre'
+require_relative './../app/item'
 
 describe Genre do
     context 'when initialized' do
