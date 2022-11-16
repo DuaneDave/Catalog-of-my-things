@@ -1,13 +1,21 @@
 require_relative 'book'
 require_relative 'label'
+require_relative 'music'
+require_relative 'genre'
 require_relative './preserve_data/preserve_data'
 
 class App
+  attr_reader :music_albums, :genres
+
   def initialize
+    @preserve_music_album = PreserveData.new('./src/store/music_album.json')
+    @preserved_genre = PreserveData.new('./src/store/genre.json')
     @preserved_books = PreserveData.new('./src/store/books.json')
     @preserved_labels = PreserveData.new('./src/store/labels.json')
     @books = []
     @labels = []
+    @music_albums = []
+    @genres = []
   end
 
   def list_all_books
@@ -22,6 +30,22 @@ class App
 
     all_labels.each_with_index do |label, index|
       puts "#{index + 1}. #{label['title']}, #{label['color']}"
+    end
+  end
+
+  # Music Album
+  def list_all_music_albums
+    all_music_album = @preserve_music_album.load
+    all_music_album.each_with_index do |music_album, index|
+      puts "#{index + 1}. #{music_album['publish_date']}, #{music_album['on_spotify']}"
+    end
+  end
+
+  # Genres
+  def list_all_genres
+    all_genres = @preserved_genre.load
+    all_genres.each_with_index do |genre, index|
+      puts "#{index + 1}. #{genre['name']}"
     end
   end
 
