@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require 'date'
 
 class Item
@@ -19,7 +17,9 @@ class Item
   def move_to_archive
     @archived = true if can_be_archived?
   end
-end
 
-item = Item.new('2002/11/14')
-puts item.can_be_archived?
+  def add_label(label)
+    label.items << self unless label.items.include? self
+    @label = label
+  end
+end
