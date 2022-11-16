@@ -1,7 +1,8 @@
-require 'rspec'
-require_relative('./../../spec/spec_helper.rb')
-require_relative './../app/music'
+# frozen_string_literal: true
 
+require 'rspec'
+require_relative('./../../spec/spec_helper')
+require_relative './../app/music'
 
 describe Music do
   context 'when initialized' do

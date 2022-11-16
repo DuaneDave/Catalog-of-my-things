@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'book'
 require_relative 'label'
 require_relative 'music'
@@ -87,7 +89,7 @@ class App
     arr = @preserved_genres.load
 
     @genres.each do |tag|
-      arr << { id:tag.id, name: tag.name }
+      arr << { id: tag.id, name: tag.name }
     end
 
     preserve_all('./src/store/genres.json', arr)
@@ -114,7 +116,6 @@ class App
     preserve_all('./src/store/music_albums.json', arr)
 
     puts 'Music album added successfully!'
-
   end
 
   def add_book
