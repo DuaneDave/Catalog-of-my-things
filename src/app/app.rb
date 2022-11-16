@@ -9,7 +9,7 @@ class App
 
   def initialize
     @preserve_music_album = PreserveData.new('./src/store/music_albums.json')
-    @preserved_genre = PreserveData.new('./src/store/genres.json')
+    @preserved_genres = PreserveData.new('./src/store/genres.json')
     @preserved_books = PreserveData.new('./src/store/books.json')
     @preserved_labels = PreserveData.new('./src/store/labels.json')
     @books = []
@@ -43,7 +43,7 @@ class App
 
   # Genres
   def list_all_genres
-    all_genres = @preserved_genre.load
+    all_genres = @preserved_genres.load
     all_genres.each_with_index do |genre, index|
       puts "#{index + 1}. #{genre['name']}"
     end
@@ -81,10 +81,10 @@ class App
     name = gets.chomp
 
     genre = Genre.new(name)
-    genre.add_genre(item)
+    genre.add_item(item)
     @genres << genre
 
-    arr = @preserved_labels.load
+    arr = @preserved_genres.load
 
     @genres.each do |tag|
       arr << { id:tag.id, name: tag.name }
@@ -97,18 +97,18 @@ class App
 
   def add_music_album
     puts 'Is the music on spotify? (Y/N): '
-    spotify_value = gets.chomp.downcase == 'y'
+    on_spotify = gets.chomp.downcase == 'y'
     puts 'Enter publish date (YYYY-MM-DD): '
     publish_date = gets.chomp
 
-    music = Music.new(publish_date, spotify_value)
+    music = Music.new(publish_date, on_spotify)
     add_genre(music)
     @music_albums << music
 
     arr = @preserve_music_album.load
 
     @music_albums.each do |item|
-      arr << { publish_date: item.publish_date, spotify_value: item.spotify_value }
+      arr << { publish_date: item.publish_date, on_spotify: item.on_spotify }
     end
 
     preserve_all('./src/store/music_albums.json', arr)

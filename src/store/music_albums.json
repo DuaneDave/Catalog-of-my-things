@@ -1,0 +1,22 @@
+[
+  {
+    "publish_date": "2022-10-11",
+    "on_spotify": false
+  },
+  {
+    "publish_date": "2010-12-12",
+    "on_spotify": true
+  },
+  {
+    "publish_date": "2011-12-23",
+    "on_spotify": false
+  },
+  {
+    "publish_date": "2011-12-23",
+    "on_spotify": false
+  },
+  {
+    "publish_date": "2010-02-25",
+    "on_spotify": true
+  }
+]
