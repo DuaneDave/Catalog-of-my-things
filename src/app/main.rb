@@ -4,7 +4,10 @@ def display_options
   puts 'Choose an option:'
 
   puts '1 List all book'
+  puts '2 List all music albums'
+  puts '4 List all genres'
   puts '5 List all labels'
+  puts '8 Add music album'
   puts '9 Add book'
   puts '0 Exit'
 
@@ -21,8 +24,14 @@ def main
     case option
     when 1
       app.list_all_books
+    when 2
+      app.list_all_music_albums
+    when 4
+      app.list_all_genres
     when 5
       app.list_all_labels
+    when 8
+      app.add_music_album
     when 9
       app.add_book
     when 0

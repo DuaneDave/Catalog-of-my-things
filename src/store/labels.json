@@ -6,5 +6,9 @@
   {
     "title": "Action",
     "color": "Red"
+  },
+  {
+    "title": "Grow",
+    "color": "Blue"
   }
 ]

@@ -23,3 +23,15 @@ CREATE TABLE books (
   cover_state VARCHAR(100),
   FOREIGN KEY(id) REFERENCES item(id)
 );
+
+CREATE TABLE genres (
+  id BIGSERIAL NOT NULL PRIMARY KEY,
+  name VARCHAR(100),
+);
+
+CREATE TABLE music (
+  id  INT,
+  title VARCHAR(100),
+  on_spotify BOOLEAN,
+  FOREIGN KEY(id) REFERENCES item(id)
+);
