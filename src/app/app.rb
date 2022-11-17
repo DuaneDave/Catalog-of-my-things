@@ -196,21 +196,15 @@ class App
                     false
                   end
     puts 'When was the game last played?'
-    last_played = gets.chomp
-
-    game = Game.new(game_name, publish_date, multiplayer, last_played)
+    last_played = gets.chomp  
+    game = Game.new(game_name, multiplayer, last_played, publish_date)
     add_author(game)
     @games << game
-
     arr = @preserved_games.load
-
     @games.each do |item|
-      arr << { title: item.title, publish_date: item.publish_date, multiplayer: item.multiplayer,
-               last_played_at: last_played }
+      arr << { title: item.title, publish_date: item.publish_date, multiplayer: item.multiplayer, last_played_at: last_played }
     end
-
     preserve_all('./src/store/games.json', arr)
-
     puts 'Game added successfully!'
   end
 end
