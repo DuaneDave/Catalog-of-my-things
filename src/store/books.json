@@ -13,5 +13,10 @@
     "cover_state": "Good",
     "publisher": "Macmillan",
     "publish_date": "2022-10-10"
+  },
+  {
+    "cover_state": "bad",
+    "publisher": "publishrer5656",
+    "publish_date": "2010-03-03"
   }
 ]
