@@ -5,13 +5,13 @@ def display_options
 
   puts '1 List all book'
   puts '2 List all music albums'
-  puts '4 List all genres'
-  puts '5 List all labels'
-  puts '6 List all games'
-  puts '7 List all authors'
-  puts '8 Add music album'
-  puts '9 Add book'
-  puts '10 Add game'
+  puts '3 List all genres'
+  puts '4 List all labels'
+  puts '5 List all games'
+  puts '6 List all authors'
+  puts '7 Add music album'
+  puts '8 Add book'
+  puts '9 Add game'
   puts '0 Exit'
 
   gets.chomp.to_i
@@ -29,19 +29,19 @@ def main
       app.list_all_books
     when 2
       app.list_all_music_albums
-    when 4
+    when 3
       app.list_all_genres
-    when 5
+    when 4
       app.list_all_labels
-    when 6
+    when 5
       app.list_all_games
-    when 7
+    when 6
       app.list_all_authors
-    when 8
+    when 7
       app.add_music_album
-    when 9
+    when 8
       app.add_book
-    when 10
+    when 9
       app.add_game
     when 0
       break
