@@ -2,6 +2,8 @@ require_relative 'book'
 require_relative 'label'
 require_relative 'music'
 require_relative 'genre'
+require_relative 'game'
+require_relative 'author'
 require_relative './preserve_data/preserve_data'
 
 class App
@@ -12,10 +14,14 @@ class App
     @preserved_genres = PreserveData.new('./src/store/genres.json')
     @preserved_books = PreserveData.new('./src/store/books.json')
     @preserved_labels = PreserveData.new('./src/store/labels.json')
+    @preserved_games = PreserveData.new('./src/store/games.json')
+    @preserved_authors = PreserveData.new('./src/store/authors.json')
     @books = []
     @labels = []
     @music_albums = []
     @genres = []
+    @games = []
+    @authors = []
   end
 
   def list_all_books
@@ -46,6 +52,22 @@ class App
     all_genres = @preserved_genres.load
     all_genres.each_with_index do |genre, index|
       puts "#{index + 1}. #{genre['name']}"
+    end
+  end
+
+  # Games
+  def list_all_games
+    all_games = @preserved_games.load
+    all_games.each_with_index do |game, index|
+      puts "#{index + 1}. #{game['title']}"
+    end
+  end
+
+  # Authors
+  def list_all_authors
+    all_authors = @preserved_authors.load
+    all_authors.each_with_index do |author, index|
+      puts "#{index + 1}. #{author['First_name']}"
     end
   end
 
@@ -137,5 +159,53 @@ class App
     preserve_all('./src/store/books.json', arr)
 
     puts 'Book added successfully!'
+  end
+
+  def add_author(item)
+    puts 'Games\'s creator first name: '
+    author_first_name = gets.chomp
+    puts 'Game\'s creator last name: '
+    author_last_name = gets.chomp
+
+    author = Author.new(author_first_name, author_last_name)
+    author.add_item(item)
+    @authors << author
+
+    arr = @preserved_authors.load
+
+    @authors.each do |tag|
+      arr << { First_name: tag.first_name, Last_name: tag.last_name }
+    end
+
+    preserve_all('./src/store/authors.json', arr)
+
+    puts 'Author added successfully'
+  end
+
+  def add_game
+    puts 'Enter the name of the game:'
+    game_name = gets.chomp
+    puts 'Enter publish date:'
+    publish_date = gets.chomp
+    puts 'Is it a multiplayer game? [y/n]'
+    game_multiplayer = gets.chomp
+    multiplayer = case game_multiplayer.downcase
+                  when 'y'
+                    true
+                  else
+                    false
+                  end
+    puts 'When was the game last played?'
+    last_played = gets.chomp
+    game = Game.new(game_name, multiplayer, last_played, publish_date)
+    add_author(game)
+    @games << game
+    arr = @preserved_games.load
+    @games.each do |item|
+      arr << { title: item.title, publish_date: item.publish_date, multiplayer: item.multiplayer,
+               last_played_at: last_played }
+    end
+    preserve_all('./src/store/games.json', arr)
+    puts 'Game added successfully!'
   end
 end

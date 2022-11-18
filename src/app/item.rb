@@ -23,4 +23,8 @@ class Item
     label.items << self unless label.items.include? self
     @label = label
   end
+
+  def add_author(author)
+    @author = author
+  end
 end

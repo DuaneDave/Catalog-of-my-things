@@ -10,5 +10,9 @@
   {
     "title": "Grow",
     "color": "Blue"
+  },
+  {
+    "title": "LabelTitle",
+    "color": "LabelColor"
   }
 ]
