@@ -10,22 +10,21 @@ class Item
     @archived = false
   end
 
-  
   def move_to_archive
     @archived = true if can_be_archived?
   end
-  
+
   def add_label(label)
     label.items << self unless label.items.include? self
     @label = label
   end
-  
+
   def add_author(author)
     @author = author
   end
 
   private
-  
+
   def can_be_archived?
     (DateTime.now - publish_date).to_i >= 3650
   end
