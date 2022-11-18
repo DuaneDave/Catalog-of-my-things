@@ -1,14 +1,23 @@
  # Catalog of my things
 
+## App's Architecture
+
+
+![screenshot](./asset/catalog_of_my_things.png)
+
+
+
+
 > "Category of my things" is an OOP implementation of an item categorizing system that will make it easier to manage your book, music albums , movie and games on your console application.
 
 ## Built With
 
 - Ruby
+- Rspec
 
 ## Live Demo
 
-[soon](https://#)
+[Live Demo](https://drive.google.com/file/d/1QF-Qkm7-c9Xe433xKJm7MsEg5-Br8OCJ/view?usp=share_link)
 
 ## Getting Started
 
@@ -46,17 +55,17 @@ To Run test
 - LinkedIn: [Kehinde Onifade](https://linkedin.com/in/kehindeonifade)
 
 
-👤 **Duane Dave**
+👤 **Obiebi David**
 
-- GitHub: [@your-link](https://github.com/your-link)
-- Twitter: [@your-link](https://twitter.com/your-link)
-- LinkedIn: [Your-Link](https://linkedin.com/in/your-link)
+- GitHub: [@github handle](https://github.com/DuaneDave)
+- Twitter: [@twitterhandle](https://twitter.com/dave_duane)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/david-obiebi/)
 
 👤 **Bakhtiyor**
 
-- GitHub: [@your-link](https://github.com/your-link)
-- Twitter: [@your-link](https://twitter.com/your-link)
-- LinkedIn: [Your-Link](https://www.linkedin.com/in/Your-Link/)
+- GitHub: [@github handle](https://github.com/username-forGithub)
+- Twitter: [@twitterhandle](https://twitter.com/Bakhtiyor_dev)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/baxtiyor-yusubaliev)
 
 
 
