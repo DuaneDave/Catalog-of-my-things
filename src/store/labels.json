@@ -14,5 +14,13 @@
   {
     "title": "LabelTitle",
     "color": "LabelColor"
+  },
+  {
+    "title": "ooops",
+    "color": "black"
+  },
+  {
+    "title": "bad",
+    "color": "purple"
   }
 ]
