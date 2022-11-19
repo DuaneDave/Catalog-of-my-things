@@ -1,0 +1,32 @@
+[
+  {
+    "cover_state": "Black and white",
+    "publisher": "David",
+    "publish_date": "2020-05-15"
+  },
+  {
+    "cover_state": "Men in black",
+    "publisher": "Manning Brown",
+    "publish_date": "2007-03-23"
+  },
+  {
+    "cover_state": "Good",
+    "publisher": "Macmillan",
+    "publish_date": "2022-10-10"
+  },
+  {
+    "cover_state": "bad",
+    "publisher": "publishrer5656",
+    "publish_date": "2010-03-03"
+  },
+  {
+    "cover_state": "mandlo",
+    "publisher": "me",
+    "publish_date": "2020-11-11"
+  },
+  {
+    "cover_state": "green",
+    "publisher": "david",
+    "publish_date": "2020-12-23"
+  }
+]
